@@ -3,7 +3,6 @@ import threading
 from aes import ManualAES
 from common import *
 
-# Master key tiap entitas (sekarang bebas panjangnya karena selalu di-hash dengan SHA-256)
 master_keys_text = {
     "ALICE": "default_A",
     "BOB": "default_B",
@@ -17,7 +16,7 @@ keys_lock = threading.Lock()
 
 
 def handle_client(conn, addr):
-    """Melayani satu request: langkah 1 (terima) dan langkah 2 (balas)."""
+    """layani satu request: langkah 1 (terima) dan langkah 2 (balas)."""
     try:
         msg_type, payload = recv_msg(conn)
         if msg_type != T_KDC_REQ:
