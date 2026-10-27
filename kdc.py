@@ -1,6 +1,5 @@
 import socket
 import threading
-
 from aes import ManualAES
 from common import *
 
